@@ -4,7 +4,7 @@
   "description": "This is the project for hotel additional services using nodejs.",
   "main": "src/server.js",
   "scripts": {
-    "test": "mocha ./test --recursive",
+    "test": "mocha './src/**/*.test.js'",
     "dev": "nodemon src/app.js -e js,hbs"
   },
   "author": "Cyborg Tech",
