@@ -15,16 +15,20 @@ router.get('/users', async (req, res) => {
 })
 
 router.post('/user', async (req, res) => {
+  const user = new User({
+    fname: req.body.fname,
+    lname: req.body.lname,
+    email: req.body.email,
+    gender: req.body.gender,
+    age: req.body.age,
+    phoneno: req.body.phoneno
+  })
   try {
-    const users = new User({
-      fname: req.body.fname,
-      lname: req.body.lname
-    })
-    // res.json(customers)
-    // console.log(users)
-    res.render('user', { userDetails: users })
+    const u1 = await user.save()
+    res.json(u1)
+    // res.render('user', { userDetails: users })
   } catch (err) {
-    res.send(err)
+    res.status(400).json({ message: err })
   }
 })
 // router.post('')
