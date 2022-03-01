@@ -24,7 +24,7 @@ app.use('/app', userRouter)
 //   res.render('index')
 // })
 app.get('/', (req, res) => {
-  res.render('main')
+  res.sendFile('index')
 })
 
 module.exports = {
