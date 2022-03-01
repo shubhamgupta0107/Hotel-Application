@@ -16,7 +16,12 @@ body {
    font-family: 'Lato', sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
    font-weight: 700;
    letter-spacing: 1px;
    text-transform: uppercase;
@@ -59,6 +64,7 @@ section {
    text-transform: uppercase;
    color: #11245A !important;
 }
+
 .navbar .nav-link {
    font-size: 12px;
    text-transform: uppercase;
@@ -69,7 +75,7 @@ section {
    color: #E93B81;
 }
 
-#home {
+/* #home {
    background: linear-gradient(rgba(17, 36, 90, 0.8), rgba(17, 36, 90, 0.8)), url(../img/hero_img.jpg);
    min-height: 100vh;
    background-size: cover;
@@ -77,7 +83,7 @@ section {
    background-attachment: fixed;
    display: flex;
    align-items: center;
-}
+} */
 
 #home h1 {
    font-weight: 700;
@@ -135,10 +141,11 @@ section {
    overflow: hidden;
    position: relative;
 }
- .portfolio-item img,
- .portfolio-item .portfolio-overlay {
-    transition: all 0.4s ease;
- }
+
+.portfolio-item img,
+.portfolio-item .portfolio-overlay {
+   transition: all 0.4s ease;
+}
 
 .portfolio-overlay {
    position: absolute;
@@ -285,39 +292,39 @@ form .form-control:focus {
 
 
 
- .section-4 .container h1 {
+.section-4 .container h1 {
    font-size: 6vmin;
    padding-top: 14vmin;
- }
- 
- .section-4 .team {
+}
+
+.section-4 .team {
    padding: 10vmin 4vmin;
- }
- 
- .section-4 .card {
+}
+
+.section-4 .card {
    width: 22em;
    margin-top: 10vmin;
- }
- 
- .section-4 .card .card-text {
+}
+
+.section-4 .card .card-text {
    padding: 0.5em;
- }
- 
- .section-4 .card-body>a {
+}
+
+.section-4 .card-body>a {
    font-size: 1.5em;
- }
- 
- .section-4 .carousel-item {
+}
+
+.section-4 .carousel-item {
    padding-left: 3rem;
- }
- 
- .border-radius {
+}
+
+.border-radius {
    border-radius: 340px;
    width: 60%;
- }
+}
 
- /* cards css */
- :root {
+/* cards css */
+:root {
    --font1: 'Heebo', sans-serif;
    --font2: 'Fira Sans Extra Condensed', sans-serif;
    --font3: 'Roboto', sans-serif
@@ -408,7 +415,7 @@ h2 {
 
 @media (max-width: 768px) {
    .card-img-top {
-       max-height: 250px
+      max-height: 250px
    }
 }
 
@@ -433,13 +440,13 @@ h2 {
 
 @media (max-width: 1025px) {
    .btn {
-       padding: 5px 40px 5px 40px
+      padding: 5px 40px 5px 40px
    }
 }
 
 @media (max-width: 250px) {
    .btn {
-       padding: 5px 30px 5px 30px
+      padding: 5px 30px 5px 30px
    }
 }
 
@@ -506,11 +513,11 @@ h2 {
 
 @media (max-width: 576px) {
    .box-img {
-       max-width: 200px
+      max-width: 200px
    }
 
    .thumb-sec {
-       max-width: 200px
+      max-width: 200px
    }
 }
 
@@ -528,8 +535,8 @@ h2 {
 
 @media (max-width: 370px) {
    .box .btn {
-       padding: 5px 40px 5px 40px;
-       font-size: 1rem
+      padding: 5px 40px 5px 40px;
+      font-size: 1rem
    }
 }
 
@@ -547,4 +554,3 @@ footer {
    height: 80px;
    color: #fff
 }
-
