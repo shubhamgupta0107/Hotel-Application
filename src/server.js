@@ -28,6 +28,12 @@ app.get('/', (req, res) => {
   res.sendFile('index')
 })
 
+app.use(express.static(path.join(__dirname, '../public')))
+
+app.get('/register', (req, res) => {
+  // res.sendFile('C://Users//shugupta21//Desktop//hotelservices//public//registration.html')
+  res.sendFile('registration.html', { root: path.join(__dirname, '../public') })
+})
 module.exports = {
   app
 }

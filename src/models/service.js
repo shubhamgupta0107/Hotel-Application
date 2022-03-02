@@ -11,8 +11,8 @@ const serviceSchema = new mongoose.Schema({
   },
   content: {
     type: String,
-    required: true,
-    
+    required: true
   }
 })
+
 module.exports = mongoose.model('Service', serviceSchema)
