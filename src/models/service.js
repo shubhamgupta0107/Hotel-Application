@@ -1,16 +1,12 @@
 const mongoose = require('mongoose')
 
 const serviceSchema = new mongoose.Schema({
-  sername: {
+  service_name: {
     type: String,
     required: true
   },
   price: {
     type: Number,
-    required: true
-  },
-  content: {
-    type: String,
     required: true
   }
 })

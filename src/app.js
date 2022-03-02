@@ -3,8 +3,9 @@ const { app } = require('./server.js')
 
 const port = process.env.PORT || 3000
 const url = 'mongodb://localhost:27017/hotelservices'
+// const postServices = require('./controllers/services')
 
-/** Created a connection with mongodb */
+/* Created a connection with mongodb */
 async function createConnection () {
   try {
     await mongoose.connect(url, {
@@ -21,6 +22,8 @@ async function createConnection () {
 
 createConnection()
 
+// postServices()
+
 module.exports = {
-  createConnection
+  createConnection, app
 }
