@@ -236,3 +236,25 @@ footer .social-icons a:hover,
 footer .footer-links a:hover {
    color: #E93B81;
 }
+
+/* about */
+
+#about {
+   padding-top: 80px;
+   padding-bottom: 8px;
+}
+
+#about h1 {
+   padding-bottom: 70px;
+
+}
+
+#about-col ul {
+   padding-top: 50px;
+   padding-left: 50px;
+}
+
+#about-col ul li {
+   padding-top: 15px;
+
+}
