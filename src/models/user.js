@@ -30,6 +30,14 @@ const userSchema = new mongoose.Schema({
   alternatephoneno: {
     type: Number,
     unique: true
+  },
+  servicesOpted: {
+    type: Array,
+    required: true
+  },
+  total_cost: {
+    type: Number,
+    default: 0
   }
 
 })

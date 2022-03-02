@@ -19,21 +19,20 @@ app.use(express.static(path.join(__dirname, '../public')))
 // app.set('views', path.join(__dirname, '../templates/views'))
 
 const userRouter = require('./routes/users.js')
+// require('./routes/services')
+// require('./routes/registers')
+
 app.use('/api', userRouter)
 
-// app.get('/customers', (req, res) => {
-//   res.render('index')
-// })
 app.get('/', (req, res) => {
   res.sendFile('index')
 })
-
-app.use(express.static(path.join(__dirname, '../public')))
 
 app.get('/register', (req, res) => {
   // res.sendFile('C://Users//shugupta21//Desktop//hotelservices//public//registration.html')
   res.sendFile('registration.html', { root: path.join(__dirname, '../public') })
 })
+
 module.exports = {
   app
 }
