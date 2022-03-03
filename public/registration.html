@@ -71,16 +71,16 @@
                                                     <div class="form-outline">
                                                         <label class="form-label" for="fname">First name</label>
                                                         <input type="text" id="fname"
-                                                            class="form-control form-control-lg" name="fname" required/>
-
+                                                            class="form-control form-control-lg" name="fname"
+                                                            pattern="[a-zA-Z]{2,}" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4">
                                                     <div class="form-outline">
                                                         <label class="form-label" for="lname">Last name</label>
                                                         <input type="text" id="lname"
-                                                            class="form-control form-control-lg" name="lname" required/>
-
+                                                            class="form-control form-control-lg" name="lname"
+                                                            required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -90,14 +90,15 @@
                                                     <div class="form-outline">
                                                         <label class="form-label" for="age">Age</label>
                                                         <input type="number" id="age"
-                                                            class="form-control form-control-lg" name="age" min="12" max="120"/>
+                                                            class="form-control form-control-lg" name="age" min="12"
+                                                            max="120" />
 
                                                     </div>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label" for="email">Email ID</label>
                                                     <input type="email" id="email" class="form-control form-control-lg"
-                                                        name="email" required/>
+                                                        name="email" required />
 
                                                 </div>
 
@@ -153,20 +154,23 @@
                                                     tabindex="100">
                                                     <span class="anchor form-label">Select services...</span>
                                                     <ul class="items">
-                                                        <li><input id="gym" type="checkbox" name="service" value="Gym"/><label
-                                                                for="gym">Gym</label> </li>
-                                                        <li><input id="safetyBox" type="checkbox" name="service" value="Safety Deposit Box"/><label
+                                                        <li><input id="gym" type="checkbox" name="service"
+                                                                value="Gym" /><label for="gym">Gym</label> </li>
+                                                        <li><input id="safetyBox" type="checkbox" name="service"
+                                                                value="Safety Deposit Box" /><label
                                                                 for="safetyBox">Safety Deposit Box</label>
                                                         </li>
-                                                        <li><input id="pool" type="checkbox" name="service" value="Swimming Pool"/><label
-                                                                for="pool">Swimming Pool</label> </li>
+                                                        <li><input id="pool" type="checkbox" name="service"
+                                                                value="Swimming Pool" /><label for="pool">Swimming
+                                                                Pool</label> </li>
 
                                                     </ul>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-end pt-3">
-                                                <input type="reset" class="btn btn-light btn-lg" value="Reset All"/>
-                                                <input type="submit" class="btn btn-lg btn-warning ms-2"value="Submit Form"/>
+                                                <input type="reset" class="btn btn-light btn-lg" value="Reset All" />
+                                                <input type="submit" class="btn btn-lg btn-warning ms-2"
+                                                    value="Submit Form" />
                                             </div>
                                         </form>
                                     </div>
