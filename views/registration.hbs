@@ -1,0 +1,131 @@
+{{> navbar}}
+
+<section class="h-100 bg-dark">
+  <div class="container py-5 h-100 mt-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img src="./img/registration.jpg" width="600px" height="8000px" alt="Sample photo" class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">Registration form</h3>
+                <form action="api/registration" method="post">
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <label class="form-label" for="fname">First name</label>
+                        <input type="text" id="fname" class="form-control form-control-lg" name="fname"
+                          pattern="[a-zA-Z]{1,}" required />
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <label class="form-label" for="lname">Last name</label>
+                        <input type="text" id="lname" class="form-control form-control-lg" name="lname" required />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <label class="form-label" for="age">Age</label>
+                        <input type="number" id="age" class="form-control form-control-lg" name="age" min="12"
+                          max="120" />
+
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="email">Email ID</label>
+                      <input type="email" id="email" class="form-control form-control-lg" name="email" required />
+
+                    </div>
+
+                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                      <h6 class="mb-0 me-4 mb-1">Gender: </h6>
+
+                      <div class="form-check form-check-inline mb-0 me-4">
+                        <input class="form-check-input" type="radio" name="gender" id="maleGender" value="Male"
+                          checked />
+                        <label class="form-check-label" for="maleGender" d>Male</label>
+                      </div>
+
+                      <div class="form-check form-check-inline mb-0 me-4">
+                        <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="Female" />
+                        <label class="form-check-label" for="femaleGender">Female</label>
+                      </div>
+
+                      <div class="form-check form-check-inline mb-0">
+                        <input class="form-check-input" type="radio" name="gender" id="otherGender" value="Other" />
+                        <label class="form-check-label" for="otherGender">Other</label>
+                      </div>
+
+                    </div>
+
+
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="phoneno">Phone Number</label>
+                      <input type="text" id="phoneno" class="form-control form-control-lg" pattern="[0-9]{10}"
+                        name="phoneno" />
+
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="alternatePhone">Alternate Phone
+                        Number</label>
+                      <input type="text" id="alternatePhone" class="form-control form-control-lg" pattern="[0-9]{10}"
+                        name="alternatephoneno" />
+
+                    </div>
+
+                    <!---   <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                    <option selected>Select services</option>
+                                        <option value="1">Gym</option>
+                                        <option value="2"> Laundry</option>
+                                        <option value="3">Hotel premices</option>
+                                    </select>  -->
+                    <div id="services" class="dropdown-check-list form-outline" tabindex="100">
+                      <span class="anchor form-label">Select services...</span>
+                      <ul class="items">
+                        <li><input id="gym" type="checkbox" name="service" value="Gym" /><label for="gym">&#8201; Gym</label>
+                        </li>
+                        <li><input id="safetyBox" type="checkbox" name="service" value="Safety Deposit Box" /><label
+                            for="safetyBox">&#8201; Safety Deposit Box</label>
+                        </li>
+                        <li><input id="pool" type="checkbox" name="service" value="Swimming Pool" /><label
+                            for="pool">&#8201; Swimming
+                            Pool</label> </li>
+                        <li><input id="spa" type="checkbox" name="service" value="Spa" /><label
+                            for="spa">&#8201; Spa</label> </li>
+                        <li><input id="gaming" type="checkbox" name="service" value="Gaming Zone" /><label
+                            for="gaming">&#8201; Gaming Zone</label> </li>
+                        <li><input id="laundry" type="checkbox" name="service" value="Laundry" /><label
+                            for="laundry">&#8201; Laundry</label> </li>
+
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-end pt-3">
+                    <input type="reset" class="btn btn-light btn-lg" value="Reset All" />
+                    <input type="submit" class="btn btn-lg btn-warning ms-2" value="Submit Form" />
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="js/registration.js"></script>
+
+
+{{> footer}}

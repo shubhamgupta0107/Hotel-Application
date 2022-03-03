@@ -10,6 +10,18 @@ const services = [
   {
     service_name: 'Swimming Pool',
     price: 300
+  },
+  {
+    service_name: 'Spa',
+    price: 200
+  },
+  {
+    service_name: 'Gaming Zone',
+    price: 300
+  },
+  {
+    service_name: 'Laundry',
+    price: 200
   }
 ]
 

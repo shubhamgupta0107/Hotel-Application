@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-// const exphbs = require('express-handlebars')
+const exphbs = require('express-handlebars')
 const app = express()
 
 app.use(express.json())
@@ -10,13 +10,14 @@ app.use(express.urlencoded({
 
 app.use(express.static(path.join(__dirname, '../public')))
 
-// app.engine('hbs', exphbs.engine({
-//   defaultLayout: 'index',
-//   extname: '.hbs',
-//   partialsDir: __dirname + '../views/partials'
-// }))
-// app.set('view engine', 'hbs')
-// app.set('views', path.join(__dirname, '../templates/views'))
+app.engine('hbs', exphbs.engine({
+  layoutsDir: path.join(__dirname, '../views/layouts'),
+  defaultLayout: 'index',
+  extname: '.hbs',
+  partialsDir: path.join(__dirname, '../views/partials')
+}))
+app.set('view engine', 'hbs')
+app.set('views', path.join(__dirname, '../views'))
 
 const userRouter = require('./routes/users.js')
 // require('./routes/services')
@@ -25,12 +26,12 @@ const userRouter = require('./routes/users.js')
 app.use('/api', userRouter)
 
 app.get('/', (req, res) => {
-  res.sendFile('index')
+  res.render('home', { title: 'Welcome to SFCC Tourism Inn' })
 })
 
 app.get('/register', (req, res) => {
-  // res.sendFile('C://Users//shugupta21//Desktop//hotelservices//public//registration.html')
-  res.sendFile('registration.html', { root: path.join(__dirname, '../public') })
+  res.render('registration', { title: 'Register for Services' })
+  // res.sendFile('registration.html', { root: path.join(__dirname, '../public') })
 })
 
 module.exports = {

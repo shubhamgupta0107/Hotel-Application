@@ -1,4 +1,5 @@
 const express = require('express')
+// const path = require('path')
 const router = express.Router()
 
 // Fetching User collection
@@ -18,13 +19,19 @@ router.get('/users', async (req, res) => {
     res.json({ userDetails: users })
     // res.render('user', { userDetails: user })
   } catch (err) {
-    res.status(400).json({ message: err })
+    res.render('error', { title: 'Error Page', errorMsg: err })
+    // res.json({ message: err })
   }
 })
 
 router.get('/user/:id', async (req, res) => {
   await User.findById(req.params.id)
 })
+
+// router.get('/details/:id', async (req, res) => {
+//   const user = await User.find(u1)
+//   res.redirect('details', { root: path.join(__dirname, '../public') })
+// })
 
 router.post('/registration', async (req, res) => {
   try {
@@ -59,12 +66,18 @@ router.post('/registration', async (req, res) => {
         await register.save()
       })
       console.log(user)
-      const u1 = await user.save()
+      await user.save()
+      res.redirect('/')
+      // res.render('userDetails', { details: user })
+      // res.send({ user_name: req.body.fname + ' ' + req.body.lname, email: req.body.email, redirect_path: '/details' })
+      // res.redirect('details', { root: path.join(__dirname, '../public') })
       // console.log(u1)
-      res.status(200).json(u1)
+      // res.status(200).json(u1)
+      // res.redirect('details')
     }, 100)
   } catch (err) {
-    res.status(400).json({ message: err })
+    res.render('error', { title: 'Error Page', errorMsg: err })
+    // res.json({ message: err })
   }
 })
 
