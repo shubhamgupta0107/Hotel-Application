@@ -8,7 +8,8 @@ router.get('/services', async (req, res) => {
     const services = await Service.find()
     res.json({ serviceDetails: services })
   } catch (err) {
-    res.status(400).json({ message: err })
+    res.render('error', { title: 'Error Page', errorMsg: err })
+    // res.json({ message: err })
   }
 })
 
@@ -20,7 +21,8 @@ router.post('/service', async (req, res) => {
     const services = await Service.find()
     res.json({ serviceDetails: services })
   } catch (err) {
-    res.status(400).json({ message: err })
+    res.render('error', { title: 'Error Page', errorMsg: err })
+    // res.json({ message: err })
   }
 })
 
@@ -28,18 +30,5 @@ router.post('/service', async (req, res) => {
 // })
 
 // const jsonData = require('../services.json')
-
-// async function postServices (req, res) {
-//   const params = {
-//     method: 'post',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(jsonData)
-//   }
-//   app.post('/services', (req, res) => {
-//     res.json(json)
-//   })
-// }
 
 // module.exports = postServices

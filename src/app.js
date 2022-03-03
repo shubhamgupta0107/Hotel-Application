@@ -1,3 +1,4 @@
+const res = require('express/lib/response')
 const { mongoose } = require('mongoose')
 const { app } = require('./server.js')
 
@@ -16,6 +17,7 @@ async function createConnection () {
       console.log(`Server ready on localhost:${port}`)
     })
   } catch (err) {
+    res.render('error', { title: 'Error Page', errorMsg: err })
     console.error('Server connection failed due to ' + err)
   }
 }
