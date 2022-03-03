@@ -8,6 +8,7 @@
 .card-registration .select-arrow {
     top: 13px;
 }*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
 .dropdown-check-list {
     display: inline-block;
@@ -19,7 +20,8 @@
     display: inline-block;
     padding: 5px 50px 5px 10px;
     border: 1px solid #ccc;
-    
+    border-radius: 10px;
+    height: 50px;
 }
 
 .dropdown-check-list .anchor:after {
@@ -63,4 +65,53 @@
 
 .dropdown-check-list.visible .items {
     display: block;
+}
+
+
+.navbar .nav-link {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #E93B81;
+}
+
+/*FOOTER*/
+
+form .form-control {
+    border-radius: 0;
+}
+
+form .form-control:focus {
+    box-shadow: none;
+    border-color: #E93B81;
+}
+
+.footer-top {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+.footer-bottom {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid rgba(160, 47, 47, 0.644);
+}
+
+footer .footer-links a {
+    color: #898fa1;
+}
+
+
+
+footer .footer-links a {
+    display: block;
+    font-weight: 400;
+}
+
+
+footer .footer-links a:hover {
+    color: #E93B81;
 }

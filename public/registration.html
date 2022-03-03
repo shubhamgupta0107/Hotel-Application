@@ -23,7 +23,7 @@
 
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
             <div class="container">
-                <a class="navbar-brand logo-text" href="#">SFCC Tourism</a>
+                <a class="navbar-brand logo-text" href="#">SFCC TOURISM INN</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -32,20 +32,25 @@
                     <ul class="navbar-nav ms-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#services">Services</a>
+                            <a class="nav-link" href="index.html">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Gallery</a>
                         </li>
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#team">Team</a>
+                            <a class="nav-link" href="index.html">Team</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -71,16 +76,16 @@
                                                     <div class="form-outline">
                                                         <label class="form-label" for="fname">First name</label>
                                                         <input type="text" id="fname"
-                                                            class="form-control form-control-lg" name="fname" required/>
-
+                                                            class="form-control form-control-lg" name="fname"
+                                                            pattern="[a-zA-Z]{1,}" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4">
                                                     <div class="form-outline">
                                                         <label class="form-label" for="lname">Last name</label>
                                                         <input type="text" id="lname"
-                                                            class="form-control form-control-lg" name="lname" required/>
-
+                                                            class="form-control form-control-lg" name="lname"
+                                                            required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -90,14 +95,15 @@
                                                     <div class="form-outline">
                                                         <label class="form-label" for="age">Age</label>
                                                         <input type="number" id="age"
-                                                            class="form-control form-control-lg" name="age" min="12" max="120"/>
+                                                            class="form-control form-control-lg" name="age" min="12"
+                                                            max="120" />
 
                                                     </div>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label" for="email">Email ID</label>
                                                     <input type="email" id="email" class="form-control form-control-lg"
-                                                        name="email" required/>
+                                                        name="email" required />
 
                                                 </div>
 
@@ -131,7 +137,7 @@
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label" for="phoneno">Phone Number</label>
                                                     <input type="text" id="phoneno" class="form-control form-control-lg"
-                                                        name="phoneno" />
+                                                        pattern="[0-9]{10}" name="phoneno" />
 
                                                 </div>
 
@@ -139,7 +145,8 @@
                                                     <label class="form-label" for="alternatePhone">Alternate Phone
                                                         Number</label>
                                                     <input type="text" id="alternatePhone"
-                                                        class="form-control form-control-lg" name="alternatephoneno" />
+                                                        class="form-control form-control-lg" pattern="[0-9]{10}"
+                                                        name="alternatephoneno" />
 
                                                 </div>
 
@@ -153,20 +160,23 @@
                                                     tabindex="100">
                                                     <span class="anchor form-label">Select services...</span>
                                                     <ul class="items">
-                                                        <li><input id="gym" type="checkbox" name="service" value="Gym"/><label
-                                                                for="gym">Gym</label> </li>
-                                                        <li><input id="safetyBox" type="checkbox" name="service" value="Safety Deposit Box"/><label
+                                                        <li><input id="gym" type="checkbox" name="service"
+                                                                value="Gym" /><label for="gym">Gym</label> </li>
+                                                        <li><input id="safetyBox" type="checkbox" name="service"
+                                                                value="Safety Deposit Box" /><label
                                                                 for="safetyBox">Safety Deposit Box</label>
                                                         </li>
-                                                        <li><input id="pool" type="checkbox" name="service" value="Swimming Pool"/><label
-                                                                for="pool">Swimming Pool</label> </li>
+                                                        <li><input id="pool" type="checkbox" name="service"
+                                                                value="Swimming Pool" /><label for="pool">Swimming
+                                                                Pool</label> </li>
 
                                                     </ul>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-end pt-3">
-                                                <input type="reset" class="btn btn-light btn-lg" value="Reset All"/>
-                                                <input type="submit" class="btn btn-lg btn-warning ms-2"value="Submit Form"/>
+                                                <input type="reset" class="btn btn-light btn-lg" value="Reset All" />
+                                                <input type="submit" class="btn btn-lg btn-warning ms-2"
+                                                    value="Submit Form" />
                                             </div>
                                         </form>
                                     </div>
@@ -178,8 +188,49 @@
                 </div>
             </div>
         </section>
+        <footer>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row gy-5">
+                        <div class="col-md-5">
+                            <h4 class="logo-text">SFCC Tourism inn</h4>
+                            <p>worlds best hotels</p>
+                        </div>
+                        <div class="col-md-5">
+                            <h5 class="title-sm">More</h5>
+                            <div class="footer-links">
+                                <a href="#">FAQ's</a>
+                                <a href="#">Privacy & Policy</a>
+                                <a href="#">Liscences</a>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <h5 class="title-sm">Contact</h5>
+                            <div class="footer-links">
+                                <p class="mb">Paris</p>
+                                <p class="mb-">43973862876</p>
+                                <p class="mb">sfcc@sapient.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row justify-content-between gy-3">
+                        <div class="col-md-6">
+                            <p class="mb-0">© Agency2021. All rights reserved</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="mb-0">Created with ❤️ by Cyborg Tech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
         <script src="js/registration.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
     </body>
 
 </html>

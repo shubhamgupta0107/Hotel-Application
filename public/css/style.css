@@ -213,26 +213,23 @@ form .form-control:focus {
 }
 
 .footer-bottom {
-   padding-top: 30px;
-   padding-bottom: 30px;
-   border-top: 1px solid rgba(0, 0, 0, 0.1);
+   padding-top: 15px;
+   padding-bottom: 15px;
+   border-top: 1px solid rgba(160, 47, 47, 0.644);
 }
 
-footer .footer-links a,
-footer .social-icons a {
+footer .footer-links a {
    color: #898fa1;
 }
 
-footer .social-icons a {
-   font-size: 24px;
-}
+
 
 footer .footer-links a {
    display: block;
    font-weight: 400;
 }
 
-footer .social-icons a:hover,
+
 footer .footer-links a:hover {
    color: #E93B81;
 }
@@ -245,16 +242,21 @@ footer .footer-links a:hover {
 }
 
 #about h1 {
-   padding-bottom: 70px;
+   padding-bottom: 40px;
 
 }
 
 #about-col ul {
-   padding-top: 50px;
+   padding-top: 30px;
    padding-left: 50px;
+   text-decoration-color: aqua;
 }
 
 #about-col ul li {
    padding-top: 15px;
 
+}
+
+#div.h1 {
+   margin-left: 20px;
 }
