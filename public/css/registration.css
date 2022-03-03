@@ -20,8 +20,9 @@
     display: inline-block;
     padding: 5px 50px 5px 10px;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 0px;
     height: 50px;
+    width: 462px;
 }
 
 .dropdown-check-list .anchor:after {
@@ -115,3 +116,5 @@ footer .footer-links a {
 footer .footer-links a:hover {
     color: #E93B81;
 }
+
+
