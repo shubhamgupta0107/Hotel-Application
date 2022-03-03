@@ -37,11 +37,13 @@
     -o-transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
     transform: rotate(-135deg);
+    
 }
 
 .dropdown-check-list .anchor:active:after {
     right: 8px;
     top: 21%;
+    
 }
 
 .dropdown-check-list ul.items {
@@ -50,6 +52,7 @@
     margin: 0;
     border: 1px solid #ccc;
     border-top: none;
+    
 }
 
 .dropdown-check-list ul.items li {
