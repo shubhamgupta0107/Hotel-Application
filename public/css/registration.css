@@ -74,3 +74,41 @@
 .navbar-light .navbar-nav .nav-link.active {
     color: #E93B81;
 }
+
+/*FOOTER*/
+
+form .form-control {
+    border-radius: 0;
+}
+
+form .form-control:focus {
+    box-shadow: none;
+    border-color: #E93B81;
+}
+
+.footer-top {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+.footer-bottom {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid rgba(160, 47, 47, 0.644);
+}
+
+footer .footer-links a {
+    color: #898fa1;
+}
+
+
+
+footer .footer-links a {
+    display: block;
+    font-weight: 400;
+}
+
+
+footer .footer-links a:hover {
+    color: #E93B81;
+}
