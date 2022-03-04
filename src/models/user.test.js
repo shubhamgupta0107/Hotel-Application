@@ -1,44 +1,45 @@
-
 const chai = require('chai')
 const request = require('supertest')
 
 const expect = chai.expect
-const app = require('../server.js')
-const user = require('./user')
+const { app } = require('../server.js')
+const User = require('./user')
 
-describe('user', function () {
-  describe('GET /user', function () {
-    it('should return  several user', async function () {
-      const response = await request(app)
-        .get('/user')
+describe('User Schema Testing', function () {
+  describe('GET /users', function () {
+    it('should return several user', function (done) {
+      const response = request(app)
+        .get('api/users')
         .expect(200)
-        .expect('Content-Type', /json/)
+        .expect('Content-Type', 'application/json')
 
       const user = response.body
-      expect(user).to.be.an('array')
-      expect(user).length.to.be.greaterThan(0)
+      expect(user).to.be.an(Array)
+      // expect(user).length.to.be.greaterThan(0)
+      done()
     })
 
-    it('should have valid user', async function () {
-      const response = await request(app)
-        .get('/user')
-        .expect(200)
-        .expect('Content-Type', /json/)
+    it('should have valid user', (done) => {
+      const response = request(app)
+        .get('api/user')
+        .expect(404)
+        .expect('Content-Type', 'text/html; charset=utf-8')
 
       const user = response.body
-      expect(user).to.be.an('array')
+      expect(user).to.be.an(Array)
 
-      user.forEach(user => {
-        expect(user.fname).to.be.a('string')
-        expect(user.lname).to.be.a('string')
-        expect(user.age).to.be.a('number')
-        expect(user.email).to.be.a('string')
-        expect(user.gender).to.be.a('string')
-        expect(user.phoneno).to.be.an('number')
-        expect(user.alternatephoneno).to.be.an('number')
-        expect(user.serviceOpted).to.be.an('array')
-        expect(user.total_cost).to.be.an('number')
+      User.forEach(User => {
+        expect(User.fname).to.be.a(String)
+        expect(User.lname).to.be.a(String)
+        expect(User.age).to.be.a(Number)
+        expect(User.email).to.be.a(String)
+        expect(User.gender).to.be.a(String)
+        expect(User.phoneno).to.be.an(Number)
+        expect(User.alternatephoneno).to.be.an(Number)
+        expect(User.servicesOpted).to.be.an(Array)
+        expect(User.total_cost).to.be.an(Number)
       })
+      done()
     })
   })
 })
