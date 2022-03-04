@@ -35,6 +35,13 @@ router.get('/user/:id', async (req, res) => {
 
 router.post('/registration', async (req, res) => {
   try {
+    // const u1 = await User.find({ email: String(emailId) })
+    // console.log(u1)
+    // if (req.body.email === u1[0].email) {
+    //   console.log('dgasjg')
+    //   res.redirect('http://localhost:3000/error')
+    //   // res.render('error', { title: 'Error Page', msg: 'Email is already in use. Type another email' })
+    // }
     const addingDetails = () => {
       user = new User({
         fname: req.body.fname,
@@ -52,7 +59,6 @@ router.post('/registration', async (req, res) => {
     let totalCost = Number(0)
     console.log(typeof req.body.service)
     if (typeof req.body.service === 'string') {
-      // console.log('HIGYDG')
       const arr = []
       arr.push(req.body.service)
       req.body.service = arr
@@ -64,18 +70,8 @@ router.post('/registration', async (req, res) => {
     })
     setTimeout(async () => {
       console.log(totalCost)
+      // Adding the details in user model object
       addingDetails()
-      // const user = new User({
-      //   fname: req.body.fname,
-      //   lname: req.body.lname,
-      //   email: req.body.email,
-      //   gender: req.body.gender,
-      //   age: req.body.age,
-      //   phoneno: req.body.phoneno,
-      //   alternatephoneno: req.body.alternatephoneno,
-      //   servicesOpted: req.body.service,
-      //   total_cost: totalCost
-      // })
       await req.body.service.forEach(async element => {
         const service = await Service.find({ service_name: element })
         // console.log(service[0], service[0]._id)
@@ -115,4 +111,7 @@ router.get('/registration/:id', async (req, res) => {
   }
 })
 
+router.get('../error', (req, res) => {
+  res.render('error', { title: 'Error Page', msg: 'Email is already in use. Type another email' })
+})
 module.exports = router

@@ -11,8 +11,7 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   gender: {
     type: String,
@@ -24,12 +23,10 @@ const userSchema = new mongoose.Schema({
   },
   phoneno: {
     type: Number,
-    required: true,
-    unique: true
+    required: true
   },
   alternatephoneno: {
-    type: Number,
-    unique: true
+    type: Number
   },
   servicesOpted: {
     type: Array,
