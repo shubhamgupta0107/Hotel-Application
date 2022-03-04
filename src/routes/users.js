@@ -25,13 +25,13 @@ router.get('/users', async (req, res) => {
 })
 
 router.get('/user/:id', async (req, res) => {
-  await User.findById(req.params.id)
+  try {
+    const user = await User.findById(req.params.id)
+    res.send(user)
+  } catch (err) {
+    res.render('error', { title: 'Error Page', errorMsg: err })
+  }
 })
-
-// router.get('/details/:id', async (req, res) => {
-//   const user = await User.find(u1)
-//   res.redirect('details', { root: path.join(__dirname, '../public') })
-// })
 
 router.post('/registration', async (req, res) => {
   try {
@@ -55,7 +55,7 @@ router.post('/registration', async (req, res) => {
         servicesOpted: req.body.service,
         total_cost: totalCost
       })
-      req.body.service.forEach(async element => {
+      await req.body.service.forEach(async element => {
         const service = await Service.find({ service_name: element })
         // console.log(service[0], service[0]._id)
         register = await Register.create({
@@ -67,10 +67,14 @@ router.post('/registration', async (req, res) => {
       })
       console.log(user)
       await user.save()
-      res.redirect('/')
+      // res.send(user)
+
+      res.redirect(`http://localhost:3000/api/registration/${user._id}`)
+      // console.log('Hdsggadgsag')
+      // res.write('dashdash')
+      // res.json(user)
       // res.render('userDetails', { details: user })
-      // res.send({ user_name: req.body.fname + ' ' + req.body.lname, email: req.body.email, redirect_path: '/details' })
-      // res.redirect('details', { root: path.join(__dirname, '../public') })
+      // res.redirect('userDetails', { root: path.join(__dirname, '../public') })
       // console.log(u1)
       // res.status(200).json(u1)
       // res.redirect('details')
@@ -78,6 +82,22 @@ router.post('/registration', async (req, res) => {
   } catch (err) {
     res.render('error', { title: 'Error Page', errorMsg: err })
     // res.json({ message: err })
+  }
+})
+
+router.get('/registration/:id', async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+    // user = JSON.stringify(user)
+    // const name = user.fname + user.lname
+    // const services = user.servicesOpted
+    // const totalCost = user.total_cost
+    console.log(user)
+    res.render('userDetails', { fname: user.fname, lname: user.lname, services: user.servicesOpted, totalCost: user.total_cost })
+    // res.render('userDetails', { user: user.toJSON() })
+    // res.render('userDetails', { name: name, services: services, totalCost: totalCost })
+  } catch (err) {
+    res.render('error', { title: 'Error Page', errorMsg: err })
   }
 })
 

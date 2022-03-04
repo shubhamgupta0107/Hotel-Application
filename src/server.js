@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
+// const Handlebars = require('handlebars')
 const exphbs = require('express-handlebars')
+// const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 const app = express()
 
 app.use(express.json())
@@ -11,6 +13,7 @@ app.use(express.urlencoded({
 app.use(express.static(path.join(__dirname, '../public')))
 
 app.engine('hbs', exphbs.engine({
+  // handlebars: allowInsecurePrototypeAccess(Handlebars),
   layoutsDir: path.join(__dirname, '../views/layouts'),
   defaultLayout: 'index',
   extname: '.hbs',
