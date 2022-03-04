@@ -1,9 +1,11 @@
 const chai = require('chai')
-const expect = chai.expect
 const mongoose = require('mongoose')
 const chaiHttp = require('chai-http')
 
+chai.should()
+
 const { app } = require('../server')
+// const user = require('../models/user')
 
 chai.use(chaiHttp)
 
@@ -21,9 +23,9 @@ describe('Users API', () => {
       chai.request(app)
         .get('/api/users')
         .end((_err, response) => {
-          expect(response).to.have.status(200)
-          expect(response).to.have.header('Content-type', 'application/json')
-          expect(response).to.be.a(Array)
+          response.should.have.status(200)
+          response.should.have.header('Content-type', 'application/json')
+          response.should.be.a(Array)
         })
       done()
     })
@@ -32,11 +34,25 @@ describe('Users API', () => {
       chai.request(app)
         .get('/api/user')
         .end((_err, response) => {
-          expect(response).to.have.status(404)
-          expect(response).to.have('Content-type', 'application/json')
-          expect(response).to.be.a(Array)
+          response.should.have.status(404)
+          response.should.have.header('Content-type', 'text/html; charset=utf-8')
         })
       done()
     })
+
+    // it('should get the user by id', (done) => {
+    //   before(() => {
+    //     chai.request(app)
+    //       .get('/api/registration/:id')
+    //   })
+    //   chai.request(app)
+    //     .get('/api/registration/:id')
+    //     .end((_err, response) => {
+    //       expect(response).to.have.status(200)
+    //       expect(response).to.have('Content-type', 'application/json')
+    //       expect(response).to.be.a(Array)
+    //     })
+    //   done()
+    // })
   })
 })
