@@ -1,5 +1,5 @@
 const chai = require('chai')
-const request = require('supertest')
+const request = require('chai-http')
 
 const expect = chai.expect
 const { app } = require('../server.js')
@@ -8,10 +8,11 @@ const User = require('./user')
 describe('User Schema Testing', function () {
   describe('GET /users', function () {
     it('should return several user', function (done) {
-      const response = request(app)
+      chai.request(app)
         .get('api/users')
-        .expect(200)
-        .expect('Content-Type', 'application/json')
+        .end((err, res) => {
+          expect(res).to.have.status(200) // <= Test completes before this runs
+        })
 
       const user = response.body
       expect(user).to.be.an(Array)

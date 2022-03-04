@@ -10,12 +10,9 @@
   "author": "Cyborg Tech",
   "license": "ISC",
   "dependencies": {
-    "@handlebars/allow-prototype-access": "^1.0.5",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.2",
-    "handlebars": "^4.7.7",
-    "mongoose": "^6.2.3",
-    "node-fetch": "^2.6.7"
+    "mongoose": "^6.2.3"
   },
   "devDependencies": {
     "chai": "^4.3.6",
@@ -27,7 +24,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "mocha": "^9.2.1",
-    "nodemon": "^2.0.15",
-    "supertest": "^6.2.2"
+    "nodemon": "^2.0.15"
   }
 }
