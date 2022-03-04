@@ -35,16 +35,8 @@ router.get('/user/:id', async (req, res) => {
 
 router.post('/registration', async (req, res) => {
   try {
-    let register
-    let totalCost = Number(0)
-    req.body.service.forEach(async element => {
-      const service = await Service.find({ service_name: element })
-      console.log(service, service[0].price)
-      totalCost += service[0].price
-    })
-    setTimeout(async () => {
-      console.log(totalCost)
-      const user = new User({
+    const addingDetails = () => {
+      user = new User({
         fname: req.body.fname,
         lname: req.body.lname,
         email: req.body.email,
@@ -55,6 +47,35 @@ router.post('/registration', async (req, res) => {
         servicesOpted: req.body.service,
         total_cost: totalCost
       })
+    }
+    let register, user
+    let totalCost = Number(0)
+    console.log(typeof req.body.service)
+    if (typeof req.body.service === 'string') {
+      // console.log('HIGYDG')
+      const arr = []
+      arr.push(req.body.service)
+      req.body.service = arr
+    }
+    req.body.service.forEach(async element => {
+      const service = await Service.find({ service_name: element })
+      console.log(service, service[0].price)
+      totalCost += service[0].price
+    })
+    setTimeout(async () => {
+      console.log(totalCost)
+      addingDetails()
+      // const user = new User({
+      //   fname: req.body.fname,
+      //   lname: req.body.lname,
+      //   email: req.body.email,
+      //   gender: req.body.gender,
+      //   age: req.body.age,
+      //   phoneno: req.body.phoneno,
+      //   alternatephoneno: req.body.alternatephoneno,
+      //   servicesOpted: req.body.service,
+      //   total_cost: totalCost
+      // })
       await req.body.service.forEach(async element => {
         const service = await Service.find({ service_name: element })
         // console.log(service[0], service[0]._id)
@@ -69,19 +90,12 @@ router.post('/registration', async (req, res) => {
       await user.save()
       // res.send(user)
 
+      // Redirecting to another page
       res.redirect(`http://localhost:3000/api/registration/${user._id}`)
-      // console.log('Hdsggadgsag')
-      // res.write('dashdash')
-      // res.json(user)
-      // res.render('userDetails', { details: user })
-      // res.redirect('userDetails', { root: path.join(__dirname, '../public') })
-      // console.log(u1)
-      // res.status(200).json(u1)
-      // res.redirect('details')
     }, 100)
   } catch (err) {
     res.render('error', { title: 'Error Page', errorMsg: err })
-    // res.json({ message: err })
+    console.log({ message: err })
   }
 })
 
